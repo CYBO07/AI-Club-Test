@@ -111,7 +111,7 @@ export default function Login({ variant = "student" }) {
         <div className="left-image">
 
           <img
-            src="/login-Leady.lottie"
+            src="/ai-login.png"
             alt="Student working on laptop"
           />
 
