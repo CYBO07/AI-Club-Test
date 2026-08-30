@@ -3,8 +3,9 @@
    ========================================================= */
 
 .login-page {
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
+  position: relative;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22,9 +23,10 @@
 .login-left {
   position: relative;
 
-  min-height: 100vh;
+  min-height: 100dvh;
 
   overflow: hidden;
+  isolation: isolate;
 
   background:
     radial-gradient(
@@ -327,6 +329,7 @@
   overflow: hidden;
 
   pointer-events: none;
+  user-select: none;
 
   background: #01030a;
 }
@@ -450,7 +453,7 @@
    ========================================================= */
 
 .login-right {
-  min-height: 100vh;
+  min-height: 100dvh;
 
   display: flex;
 
@@ -794,12 +797,7 @@
 
   border-radius: 13px;
 
-  background:
-    linear-gradient(
-      100deg,
-      #000000,
-      #000000
-    );
+  background: #000000;
 
   color: #ffffff;
 
@@ -810,8 +808,7 @@
   cursor: pointer;
 
   box-shadow:
-    0 10px 30px
-    rgba(66, 160, 3, 0.16);
+    0 10px 30px rgba(0, 0, 0, 0.25);
 
   transition:
     transform 0.2s ease,
@@ -826,8 +823,7 @@
   filter: brightness(1.08);
 
   box-shadow:
-    0 15px 35px
-    rgba(238, 1, 1, 0.521);
+    0 15px 35px rgba(239, 68, 68, 0.25);
 }
 
 .login-button:active:not(:disabled) {
@@ -1057,7 +1053,7 @@
   }
 
   .login-right {
-    min-height: 100vh;
+    min-height: 100dvh;
 
     padding:
       30px 22px;
@@ -1132,4 +1128,98 @@
     font-size: 9px;
   }
 
+}
+
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  @apply bg-surface text-ink-900 font-sans antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: #06b6d433;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 25%,
+    #edf2f7 37%,
+    #e2e8f0 63%
+  );
+  background-size: 400px 100%;
+  @apply animate-shimmer rounded-lg;
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-line shadow-card;
+}
+
+.btn-primary {
+  @apply focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-navy-900 text-white font-semibold text-sm px-4 py-2.5 hover:bg-navy-800 transition disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-accent {
+  @apply focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 text-white font-semibold text-sm px-4 py-2.5 hover:bg-cyan-600 transition disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-outline {
+  @apply focus-ring inline-flex items-center justify-center gap-2 rounded-xl border border-line text-ink-900 font-semibold text-sm px-4 py-2.5 hover:bg-slate-50 transition disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-danger {
+  @apply focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-danger-500 text-white font-semibold text-sm px-4 py-2.5 hover:bg-danger-600 transition disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-ghost {
+  @apply focus-ring inline-flex items-center justify-center gap-2 rounded-xl text-ink-600 font-semibold text-sm px-3 py-2 hover:bg-slate-100 transition;
+}
+
+.input {
+  @apply focus-ring w-full rounded-xl border border-line px-3.5 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 bg-white transition;
+}
+
+.label {
+  @apply block text-sm font-semibold text-ink-900 mb-1.5;
 }
