@@ -111,7 +111,7 @@ export default function Login({ variant = "student" }) {
         <div className="left-image">
 
           <img
-            src="/ai-login.png"
+            src="/02.png"
             alt="Student working on laptop"
           />
 

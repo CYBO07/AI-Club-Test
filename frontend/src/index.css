@@ -463,7 +463,7 @@
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(6, 182, 212, 0.08),
+      rgba(0, 0, 0, 0.08),
       transparent 35%
     ),
     #020617;
@@ -506,7 +506,7 @@
 
   border:
     1px solid
-    rgba(34, 211, 238, 0.3);
+    rgb(250, 243, 243);
 
   border-radius: 999px;
 
@@ -528,7 +528,7 @@
 
   border-radius: 50%;
 
-  background: #22d3ee;
+  background: #ee2222;
 
   box-shadow:
     0 0 10px
@@ -797,13 +797,13 @@
   background:
     linear-gradient(
       100deg,
-      #06b6d4,
-      #0284c7
+      #000000,
+      #000000
     );
 
   color: #ffffff;
 
-  font-size: 14px;
+  font-size: 20px;
 
   font-weight: 700;
 
@@ -811,7 +811,7 @@
 
   box-shadow:
     0 10px 30px
-    rgba(6, 182, 212, 0.16);
+    rgba(66, 160, 3, 0.16);
 
   transition:
     transform 0.2s ease,
@@ -827,7 +827,7 @@
 
   box-shadow:
     0 15px 35px
-    rgba(6, 182, 212, 0.25);
+    rgba(238, 1, 1, 0.521);
 }
 
 .login-button:active:not(:disabled) {
@@ -892,7 +892,7 @@
 
   color: #94a3b8;
 
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .login-help span {
@@ -902,7 +902,7 @@
 
   color: #475569;
 
-  font-size: 11px;
+  font-size: 15px;
 
   line-height: 1.6;
 }
@@ -925,7 +925,7 @@
 
   color: #475569;
 
-  font-size: 10px;
+  font-size: 15px;
 
   letter-spacing: 0.04em;
 }
